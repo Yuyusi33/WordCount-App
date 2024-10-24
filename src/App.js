@@ -13,10 +13,6 @@ function App() {
     setText(inputedText);
   };
 
-  const handleTextCount = (texts) => {
-    console.log("thisis", text);
-  };
-
   return (
     <div className=" container">
       <h2>Character Count Tool</h2>
@@ -27,16 +23,16 @@ function App() {
       </div>
       <div className="display-result">
         <div>
-          <CharacterCount onTextCount={handleTextCount} />
+          <CharacterCount text={text} />
         </div>
         <div>
-          <WordsCount />
+          <WordsCount text={text} />
         </div>
         <div>
-          <ParagraphsCount />
+          <ParagraphsCount text={text} />
         </div>
         <div>
-          <SpacesCount />
+          <SpacesCount text={text} />
         </div>
       </div>
     </div>

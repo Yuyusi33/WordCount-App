@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CharacterCount = ({ handleTextCount }) => {
+const CharacterCount = ({ text }) => {
   const [characterCount, setCharacterCount] = useState(0);
+
+  useEffect(() => {
+    setCharacterCount(text.length);
+  }, [text]);
 
   return (
     <div>
