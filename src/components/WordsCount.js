@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const WordsCount = ({ text }) => {
-  const [words, setWords] = useState([]);
+  const [words, setWords] = useState(0);
 
   useEffect(() => {
     const array = text.split(" ");

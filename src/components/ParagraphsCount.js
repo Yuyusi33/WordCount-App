@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const ParagraphsCount = () => {
-  const [parag, setParag] = useState(0);
+const ParagraphsCount = ({ text }) => {
+  const [parag, setParag] = useState([]);
+
+  useEffect(() => {
+    const paragArray = text.split(/\n+/).filter((element) => element.trim());
+
+    setParag(paragArray);
+  }, [text]);
 
   return (
     <div>
-      <p>Paragraphs {parag}</p>
+      <p>Paragraphs {parag.length}</p>
     </div>
   );
 };
