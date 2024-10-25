@@ -4,7 +4,10 @@ const CharacterCount = ({ text }) => {
   const [characterCount, setCharacterCount] = useState(0);
 
   useEffect(() => {
-    setCharacterCount(text.length);
+    const charArray = text.split("");
+
+    const filterCharArray = charArray.filter((element) => element !== " ");
+    setCharacterCount(filterCharArray.length);
   }, [text]);
 
   return (

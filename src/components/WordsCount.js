@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 
 const WordsCount = ({ text }) => {
-  const [words, setWords] = useState(0);
+  const [words, setWords] = useState([]);
+
   useEffect(() => {
-    const Words = "";
+    const array = text.split(" ");
+
+    const neWordArray = array.filter((element) => element !== "");
+
+    setWords(neWordArray);
   }, [text]);
 
   return (
     <div>
-      <p>Words {words}</p>
+      <p>Words {words.length}</p>
     </div>
   );
 };
